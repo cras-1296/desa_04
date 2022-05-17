@@ -21,8 +21,8 @@ rails s
  ```
 ## Indicaciones
 
-1. Desde el material de apoyo, descarga el proyecto manual_jam
-2. Revisa el proyecto partiendo por las rutas. Puedes revisar el archivo de rutas o
+*1. Desde el material de apoyo, descarga el proyecto manual_jam
+*2. Revisa el proyecto partiendo por las rutas. Puedes revisar el archivo de rutas o
 directamente en la consola con rails routes.
 Comienzo de Actividad
 PicStory es una aplicación para que diversos usuarios guarden sus historias y puedan
