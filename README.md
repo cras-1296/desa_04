@@ -4,7 +4,7 @@
 Para poder realizar este actividad debes haber realizado los cursos previos junto con los videos online correspondientes a la experiencia XXX.
 
 
-El objetivo de este ejercicio es la implementación de un sistema de autenticación sin incluir dependencias externas.
+El objetivo de este ejercicio es la implementación de un sistema de autenticación con dependencias externas (gem devise).
 
 ## Setup
 
