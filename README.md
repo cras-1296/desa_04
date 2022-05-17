@@ -1,6 +1,5 @@
-# Actividad Presencial I
-## Autenticación Manual desde cero
-
+# Actividad Presencial
+## Desafío Opcional Módulo 9 Unidad 2
 
 Para poder realizar este actividad debes haber realizado los cursos previos junto con los videos online correspondientes a la experiencia XXX.
 
