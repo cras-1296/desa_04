@@ -12,7 +12,7 @@ El objetivo de este ejercicio es la implementación de un sistema de autenticaci
 Forkear el proyecto a tu cuenta de Github y luego clonar en tu entorno de desarrollo local
 
 ```
-git clone git@github.com:TuGithub/manual_jam.git
+git clone https://github.com/cras-1296/desa_04.git
 
 cd manual_jam
 
@@ -20,50 +20,42 @@ rails db:migrate
 
 rails s
  ```
-Revisa el proyecto partiendo por las rutas. Puedes revisar el archivo de rutas o directamente en la consola con _rails routes_.
+## Indicaciones
 
-## Comienzo de actividad.
-
-PicStory es una aplicación para que diversos usuarios guarden sus historias y puedan compartirlas, pero esta aplicación no está terminada, el cliente necesita:
-
-* Crear un modelo user con los campos name (string), email (string) y password_digest (string).
-
-* Añadir el método **has_secure_password** al modelo User y agregar la gema bcrypt al Gemfile
-
-* Añadir validación para que el campo email sea único.
-
-* Generar la ruta necesarias para crear usuarios.
-
-```
-resources :users, only: [:new, :create, :show]
-```
-* Se recomienda no usar la herramienta scaffolding y hacer los métodos y vistas manualmente.
-
-* Revisar las rutas creadas y actualizar el link del navbar para que el perfil de usuario apunte al show de users.
-
-* Crear controlador y formulario para un nuevo usuario. El formulario debe ser generado utilizando el helper **form_with** añadiendo el modelo y debe implementar las clases de bootstrap (revisar docs).
-
-* El formulario debe tener el campo para name, email y password y password_confirmation.
-
-* Crear el método **user_params** para permitir solo los atributos name, email y password.
-
-* En el controller users crear el método create. Este método debe generar una nueva instancia de User recibiendo como argumento user_params y almacenarlo en la BD. Luego, si el usuario es creado exitosamente, agregar @user.id a una variable de session (session[:user_id]) y redireccionar al root_path, en caso de error, que haga render del método new.
-
-* Añadir rutas de sesiones para crear y destruir sesion de usuario. Usar los helpers en el navbar para iniciar y cerrar sesión
-
-```
-resources :sessions, only: [:create, :destroy, :new]
-```
-* Crear el controlador de sesiones con los métodos new, create y destroy
-
-* Crear los métodos current_user y logged? en ApplicationHelper. HINT (El método logged? debe indicar si está presente la llave :user_id en el hash de sesión)
-
-* Completar los links del navbar para inicio de sesión y cerrar sesión (toggle entre ambos según la evaluación del helper **logged?**).
-
-* En caso de que no exista ningún usuario logeado mostar en el navbar links para registarse e iniciar sesión
-
-* El método destroy debe resetear las variables de sesion y redireccionar a la página root.
-
-* Añadir usuario actual a cada Story creada (Se requiere de migracion para agregar la referencia a la tabla Stories y ajustar las relaciones de los modelos).
-
-* Crear vistas con las historias por usuario en el método show de user.
+1. Desde el material de apoyo, descarga el proyecto manual_jam
+2. Revisa el proyecto partiendo por las rutas. Puedes revisar el archivo de rutas o
+directamente en la consola con rails routes.
+Comienzo de Actividad
+PicStory es una aplicación para que diversos usuarios guarden sus historias y puedan
+compartirlas, pero esta aplicación no está terminada, el cliente necesita:
+● Crear un modelo user con los campos name (string), email (string) y admin
+(boolean). (0,5 Puntos)
+● Agregar la gema devise al gemfile. Sigue la documentación para el setup básico. (0,5
+Puntos)
+● Agregar Devise al modelo User. (0,5 Puntos)
+● Generar las vistas de Devise y agregar el campo name. (1 Punto)
+● Modificar el formulario de registro para agregar el campo name. (1 Punto)
+● Validar el campo name como obligatorio. (0,5 Puntos)
+● Agregar las relaciones entre los modelos User y Story. (0,5 Puntos)
+● Al momento de crear una nueva historia, asignar el usuario creador a la historia
+creada. (0,5 Puntos)
+● Modificar el Navbar para que muestre links de inicio o cierre de sesión según el caso.
+(0,5 Puntos)
+● Modificar la vista index de Story, si el usuario no está conectado sólo mostrará el
+botón de show en cada Story. (0,5 Puntos)
+● Si el usuario está conectado, el usuario solo podrá modificar las historias que le
+pertenecen. (0,5 Puntos)
+● Si el usuario conectado es admin, el usuario podrá modificar todas las historias. (0,5
+Puntos)
+● Crear vista con las historias que le pertenecen al usuario. (0,5 Puntos)
+● Crear un panel de control de usuarios al que solo tendrán acceso los usuarios admin
+(El panel de control es solo una acción especial nueva, que muestra todos los
+usuarios. Esta acción sólo debe ser accesible para un usuario con el rol admin). (0,5
+Puntos)
+● Dentro del panel de control de usuarios, añadir al formulario de user la opción para
+dar o quitar el privilegio de admin. (0,5 Puntos)
+● Aplicar diseño a las vistas de Devise, acorde al diseño de la aplicación. (1 Punto)
+● Subir la aplicación funcionando a Heroku. (0,5 Puntos)
+## Opcional
+- Añade la opción de login con facebook.
+- Añade que al registrarse, al usuario se le envíe un correo de bienvenida
